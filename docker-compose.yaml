@@ -10,6 +10,8 @@ services:
       - db:/data/postgres
     ports:
       - "5332:5432"
+    env_file:
+      - .env
     networks:
       - db
     restart: unless-stopped
