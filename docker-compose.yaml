@@ -15,6 +15,18 @@ services:
     networks:
       - db
     restart: unless-stopped
+  elasticsearch:
+    image: elasticsearch:8.19.4
+    container_name: codesearch-es
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
 
 networks:
   db:
@@ -22,3 +34,4 @@ networks:
 
 volumes:
   db:
+  esdata:
