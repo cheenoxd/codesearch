@@ -1,5 +1,5 @@
 services:
-  db:
+  postgres:
     container_name: postgres-spring-boot
     image: postgres:latest
     environment:
