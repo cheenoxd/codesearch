@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "app_user") // ✅ safer than "User"
+@Table(name = "app_user") 
 public class User {
 
     @Id
