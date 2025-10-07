@@ -12,18 +12,17 @@ public class TokenController {
 
     @Autowired
     private OAuth2AuthorizedClientService authorizedClientService;
-
-    @GetMapping("/token")
+    @GetMapping("/api/token")
     public String getAccessToken(OAuth2AuthenticationToken authentication) {
         OAuth2AuthorizedClient client = authorizedClientService.loadAuthorizedClient(
                 authentication.getAuthorizedClientRegistrationId(),
                 authentication.getName());
 
         if (client == null) {
-            return "No authorized client found. Try logging in again.";
+            return "No Token";
         }
 
-        return "Access Token: " + client.getAccessToken().getTokenValue();
+        return client.getAccessToken().getTokenValue();
     }
 
 }
