@@ -1,4 +1,4 @@
-package com.codesearch.codesearch.controllers;
+package com.codesearch.codesearch.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
